@@ -1,0 +1,92 @@
+/* รีเซ็ตเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #fafafa;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* เมนูฝั่งซ้าย */
+.nav-left a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-left a:hover {
+    color: #007bff;
+}
+
+/* โลโก้ตรงกลาง */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    height: 50px;
+}
+
+/* ปุ่มออกจากระบบด้านขวา */
+.nav-right .logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.nav-right .logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-left a, .nav-right .logout-btn {
+        margin: 5px 0;
+    }
+
+    .nav-center {
+        position: static;
+        transform: none;
+    }
+}
