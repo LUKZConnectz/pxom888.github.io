@@ -7,35 +7,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="navbar">
         <nav class="nav-container" aria-label="เมนูหลัก">
-            <a class="brand" href="#" aria-label="โลโก้เว็บไซต์">X</a>
-            <ul class="menu-list">
-                <li><a href="#"><span>⌂</span>หน้า<br>หลัก</a></li>
-                <li><a href="#"><span>▣</span>ร้าน<br>ค้า</a></li>
-                <li><a href="#"><span>◎</span>สุ่ม<br>รางวัล</a></li>
-                <li><a href="#"><span>◔</span>บริการ</a></li>
-                <li><a href="#"><span>◕</span>แอพพรีเมี่ยม</a></li>
-                <li><a href="#"><span>▣</span>เติม<br>เงิน</a></li>
-                <li><a href="#"><span>?</span>วิธี<br>ใช้</a></li>
-                <li><a href="#"><span>♧</span>ติดต่อ</a></li>
-                <li><a href="#"><span>➜</span>เข้าสู่<br>ระบบ</a></li>
+            <a class="brand nav-action" href="#home" data-title="หน้าแรก" data-message="กลับไปยังหน้าแรกเรียบร้อยแล้ว" aria-label="โลโก้เว็บไซต์">PX</a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">☰</button>
+            <ul class="menu-list" id="main-menu">
+                <li><a class="nav-action active" href="#home" data-title="หน้าหลัก" data-message="เปิดหน้าหลักแล้ว"><span>⌂</span>หน้าหลัก</a></li>
+                <li><a class="nav-action" href="#shop" data-title="ร้านค้า" data-message="กำลังพาไปเลือกสินค้าราคาพิเศษ"><span>▣</span>ร้านค้า</a></li>
+                <li><a class="nav-action" href="#random" data-title="สุ่มรางวัล" data-message="เตรียมระบบสุ่มรางวัลให้คุณแล้ว"><span>◎</span>สุ่มรางวัล</a></li>
+                <li><a class="nav-action" href="#services" data-title="บริการ" data-message="แสดงบริการทั้งหมดที่พร้อมใช้งาน"><span>◔</span>บริการ</a></li>
+                <li><a class="nav-action" href="#premium" data-title="แอพพรีเมี่ยม" data-message="เปิดโซนแอพพรีเมี่ยมแล้ว"><span>◕</span>แอพพรีเมี่ยม</a></li>
+                <li><a class="nav-action" href="#topup" data-title="เติมเงิน" data-message="เข้าสู่หน้าระบบเติมเงินปลอดภัย"><span>▣</span>เติมเงิน</a></li>
+                <li><a class="nav-action" href="#howto" data-title="วิธีใช้" data-message="เปิดคู่มือการใช้งานแบบรวดเร็ว"><span>?</span>วิธีใช้</a></li>
+                <li><a class="nav-action" href="#contact" data-title="ติดต่อ" data-message="ทีมงานพร้อมช่วยเหลือคุณ"><span>♧</span>ติดต่อ</a></li>
+                <li><a class="nav-action" href="#login" data-title="เข้าสู่ระบบ" data-message="เปิดหน้าล็อกอินเรียบร้อย"><span>➜</span>เข้าสู่ระบบ</a></li>
             </ul>
-            <a class="signup-btn" href="#"><span>♟</span> สมัคร<br>สมาชิก</a>
+            <a class="signup-btn nav-action" href="#register" data-title="สมัครสมาชิก" data-message="เริ่มสร้างบัญชีใหม่ได้เลย"><span>♟</span> สมัครสมาชิก</a>
         </nav>
     </header>
 
-    <main class="page-shell">
+    <main class="page-shell" id="home">
         <section class="hero-slider" aria-label="แบนเนอร์โปรโมชั่น">
-            <button class="slider-arrow" aria-label="ก่อนหน้า">‹</button>
-            <strong>1440 x 300</strong>
-            <button class="slider-arrow" aria-label="ถัดไป">›</button>
+            <button class="slider-arrow nav-action" type="button" data-title="แบนเนอร์ก่อนหน้า" data-message="เลื่อนไปยังโปรโมชั่นก่อนหน้าแล้ว" aria-label="ก่อนหน้า">‹</button>
+            <div class="hero-copy">
+                <p>Modern Taiwan Style</p>
+                <strong>1440 x 300</strong>
+                <span>โทนสดใส ใช้งานง่าย พร้อม SweetAlert2</span>
+            </div>
+            <button class="slider-arrow nav-action" type="button" data-title="แบนเนอร์ถัดไป" data-message="เลื่อนไปยังโปรโมชั่นถัดไปแล้ว" aria-label="ถัดไป">›</button>
         </section>
 
-        <section class="stats-grid" aria-label="สถิติเว็บไซต์">
+        <section class="stats-grid" aria-label="สถิติเกมและร้านค้า">
             <article class="stat-card">
                 <div class="stat-icon user-icon" aria-hidden="true"></div>
                 <div>
@@ -68,8 +74,52 @@
 
         <section class="announcement" aria-label="ประกาศ">
             <span class="announce-label">▸ ประกาศ</span>
-            <p>เว็บขายถูกเริ่มต้น 50/เดือน</p>
+            <p>เว็บขายถูกเริ่มต้น 50/เดือน รองรับทุกปุ่มด้วย SweetAlert2</p>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('.menu-list');
+        const navActions = document.querySelectorAll('.nav-action');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuList.classList.toggle('is-open', !isOpen);
+        });
+
+        navActions.forEach((action) => {
+            action.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                document.querySelectorAll('.menu-list a').forEach((link) => link.classList.remove('active'));
+                if (action.matches('.menu-list a')) {
+                    action.classList.add('active');
+                }
+
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuList.classList.remove('is-open');
+
+                const title = action.dataset.title || 'สำเร็จ';
+                const message = action.dataset.message || 'ปุ่มนี้เชื่อมต่อ SweetAlert2 แล้ว';
+
+                if (window.Swal) {
+                    Swal.fire({
+                        title,
+                        text: message,
+                        icon: 'success',
+                        confirmButtonText: 'ตกลง',
+                        confirmButtonColor: '#00a6d6',
+                        background: '#ffffff',
+                        color: '#1d2230'
+                    });
+                } else {
+                    alert(`${title}: ${message}`);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
