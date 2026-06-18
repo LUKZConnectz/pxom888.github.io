@@ -3,27 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าเว็บเงิน</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>หน้าเว็บตัวอย่าง</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="#">หน้าหลัก</a>
-                <a href="#">เติมเงิน</a>
-                <a href="#">บริการ</a>
-                <a href="#">ติดต่อ</a>
-            </div>
-
-            <div class="nav-center">
-                <img src="logo.png" alt="โลโก้" class="logo">
-            </div>
-
-            <div class="nav-right">
-                <a href="#" class="logout-btn">ออกจากระบบ</a>
-            </div>
-        </div>
+        <nav class="nav-container" aria-label="เมนูหลัก">
+            <a class="brand" href="#" aria-label="โลโก้เว็บไซต์">X</a>
+            <ul class="menu-list">
+                <li><a href="#"><span>⌂</span>หน้า<br>หลัก</a></li>
+                <li><a href="#"><span>▣</span>ร้าน<br>ค้า</a></li>
+                <li><a href="#"><span>◎</span>สุ่ม<br>รางวัล</a></li>
+                <li><a href="#"><span>◔</span>บริการ</a></li>
+                <li><a href="#"><span>◕</span>แอพพรีเมี่ยม</a></li>
+                <li><a href="#"><span>▣</span>เติม<br>เงิน</a></li>
+                <li><a href="#"><span>?</span>วิธี<br>ใช้</a></li>
+                <li><a href="#"><span>♧</span>ติดต่อ</a></li>
+                <li><a href="#"><span>➜</span>เข้าสู่<br>ระบบ</a></li>
+            </ul>
+            <a class="signup-btn" href="#"><span>♟</span> สมัคร<br>สมาชิก</a>
+        </nav>
     </header>
+
+    <main class="page-shell">
+        <section class="hero-slider" aria-label="แบนเนอร์โปรโมชั่น">
+            <button class="slider-arrow" aria-label="ก่อนหน้า">‹</button>
+            <strong>1440 x 300</strong>
+            <button class="slider-arrow" aria-label="ถัดไป">›</button>
+        </section>
+
+        <section class="stats-grid" aria-label="สถิติเว็บไซต์">
+            <article class="stat-card">
+                <div class="stat-icon user-icon" aria-hidden="true"></div>
+                <div>
+                    <h2>สมาชิก<br>ทั้งหมด</h2>
+                    <p>58 คน</p>
+                </div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon list-icon" aria-hidden="true"></div>
+                <div>
+                    <h2>หมวด<br>หมู่</h2>
+                    <p>4 หมวด</p>
+                </div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon bag-icon" aria-hidden="true"></div>
+                <div>
+                    <h2>พร้อม<br>จำหน่าย</h2>
+                    <p>2 ชิ้น</p>
+                </div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon box-icon" aria-hidden="true"></div>
+                <div>
+                    <h2>จำหน่าย<br>ไปแล้ว</h2>
+                    <p>3 ครั้ง</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="announcement" aria-label="ประกาศ">
+            <span class="announce-label">▸ ประกาศ</span>
+            <p>เว็บขายถูกเริ่มต้น 50/เดือน</p>
+        </section>
+    </main>
 </body>
 </html>
