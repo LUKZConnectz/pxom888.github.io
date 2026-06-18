@@ -11,28 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <nav class="nav-container" aria-label="เมนูหลัก">
-            <a class="brand nav-action" href="#home" data-title="หน้าแรก" data-message="กลับไปยังหน้าแรกเรียบร้อยแล้ว" aria-label="โลโก้เว็บไซต์">
-                <span class="brand-mark">X</span>
-            </a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="เปิดเมนู">
-                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-            </button>
-            <ul class="menu-list" id="main-menu">
-                <li><a class="nav-action active" href="#home" data-title="หน้าหลัก" data-message="เปิดหน้าหลักแล้ว"><ion-icon name="home" aria-hidden="true"></ion-icon><span>หน้าหลัก</span></a></li>
-                <li><a class="nav-action" href="#shop" data-title="ร้านค้า" data-message="กำลังพาไปเลือกสินค้าราคาพิเศษ"><ion-icon name="storefront" aria-hidden="true"></ion-icon><span>ร้านค้า</span></a></li>
-                <li><a class="nav-action" href="#random" data-title="สุ่มรางวัล" data-message="เตรียมระบบสุ่มรางวัลให้คุณแล้ว"><ion-icon name="gift" aria-hidden="true"></ion-icon><span>สุ่มรางวัล</span></a></li>
-                <li><a class="nav-action" href="#services" data-title="บริการ" data-message="แสดงบริการทั้งหมดที่พร้อมใช้งาน"><ion-icon name="game-controller" aria-hidden="true"></ion-icon><span>บริการ</span></a></li>
-                <li><a class="nav-action" href="#premium" data-title="แอพพรีเมี่ยม" data-message="เปิดโซนแอพพรีเมี่ยมแล้ว"><ion-icon name="headset" aria-hidden="true"></ion-icon><span>แอพพรีเมี่ยม</span></a></li>
-                <li><a class="nav-action" href="#topup" data-title="เติมเงิน" data-message="เข้าสู่หน้าระบบเติมเงินปลอดภัย"><ion-icon name="wallet" aria-hidden="true"></ion-icon><span>เติมเงิน</span></a></li>
-                <li><a class="nav-action" href="#howto" data-title="วิธีใช้" data-message="เปิดคู่มือการใช้งานแบบรวดเร็ว"><ion-icon name="help-circle" aria-hidden="true"></ion-icon><span>วิธีใช้</span></a></li>
-                <li><a class="nav-action" href="#contact" data-title="ติดต่อ" data-message="ทีมงานพร้อมช่วยเหลือคุณ"><ion-icon name="call" aria-hidden="true"></ion-icon><span>ติดต่อ</span></a></li>
-                <li><a class="login-link" href="#login"><ion-icon name="log-in" aria-hidden="true"></ion-icon><span>เข้าสู่ระบบ</span></a></li>
-            </ul>
-            <a class="signup-btn register-link" href="#register"><ion-icon name="person-add" aria-hidden="true"></ion-icon><span>สมัครสมาชิก</span></a>
-        </nav>
-    </header>
+    <div id="navbar-root"></div>
 
     <main class="page-shell" id="home">
         <section class="hero-slider" aria-label="แบนเนอร์โปรโมชั่น">
@@ -109,9 +88,80 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
     <script>
+        const navItems = [
+            { href: '#home', title: 'หน้าหลัก', message: 'เปิดหน้าหลักแล้ว', icon: 'home', label: 'หน้าหลัก', active: true },
+            { href: '#shop', title: 'ร้านค้า', message: 'กำลังพาไปเลือกสินค้าราคาพิเศษ', icon: 'storefront', label: 'ร้านค้า' },
+            { href: '#random', title: 'สุ่มรางวัล', message: 'เตรียมระบบสุ่มรางวัลให้คุณแล้ว', icon: 'gift', label: 'สุ่มรางวัล' },
+            { href: '#services', title: 'บริการ', message: 'แสดงบริการทั้งหมดที่พร้อมใช้งาน', icon: 'game-controller', label: 'บริการ' },
+            { href: '#premium', title: 'แอพพรีเมี่ยม', message: 'เปิดโซนแอพพรีเมี่ยมแล้ว', icon: 'headset', label: 'แอพพรีเมี่ยม' },
+            { href: '#topup', title: 'เติมเงิน', message: 'เข้าสู่หน้าระบบเติมเงินปลอดภัย', icon: 'wallet', label: 'เติมเงิน' },
+            { href: '#howto', title: 'วิธีใช้', message: 'เปิดคู่มือการใช้งานแบบรวดเร็ว', icon: 'help-circle', label: 'วิธีใช้' },
+            { href: '#contact', title: 'ติดต่อ', message: 'ทีมงานพร้อมช่วยเหลือคุณ', icon: 'call', label: 'ติดต่อ' }
+        ];
+
+        const Icon = ({ name }) => React.createElement('ion-icon', { name, 'aria-hidden': 'true' });
+
+        const Navbar = () => React.createElement(
+            'header',
+            { className: 'navbar' },
+            React.createElement(
+                'nav',
+                { className: 'nav-container', 'aria-label': 'เมนูหลัก' },
+                React.createElement(
+                    'a',
+                    { className: 'brand nav-action', href: '#home', 'data-title': 'หน้าแรก', 'data-message': 'กลับไปยังหน้าแรกเรียบร้อยแล้ว', 'aria-label': 'โลโก้เว็บไซต์' },
+                    React.createElement('span', { className: 'brand-mark' }, 'X')
+                ),
+                React.createElement(
+                    'button',
+                    { className: 'menu-toggle', type: 'button', 'aria-expanded': 'false', 'aria-controls': 'main-menu', 'aria-label': 'เปิดเมนู' },
+                    React.createElement(Icon, { name: 'menu-outline' })
+                ),
+                React.createElement(
+                    'ul',
+                    { className: 'menu-list', id: 'main-menu' },
+                    navItems.map((item) => React.createElement(
+                        'li',
+                        { key: item.href },
+                        React.createElement(
+                            'a',
+                            {
+                                className: `nav-action${item.active ? ' active' : ''}`,
+                                href: item.href,
+                                'data-title': item.title,
+                                'data-message': item.message
+                            },
+                            React.createElement(Icon, { name: item.icon }),
+                            React.createElement('span', null, item.label)
+                        )
+                    )),
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
+                            { className: 'login-link', href: '#login' },
+                            React.createElement(Icon, { name: 'log-in' }),
+                            React.createElement('span', null, 'เข้าสู่ระบบ')
+                        )
+                    )
+                ),
+                React.createElement(
+                    'a',
+                    { className: 'signup-btn register-link', href: '#register' },
+                    React.createElement(Icon, { name: 'person-add' }),
+                    React.createElement('span', null, 'สมัครสมาชิก')
+                )
+            )
+        );
+
+        ReactDOM.render(React.createElement(Navbar), document.querySelector('#navbar-root'));
+
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.querySelector('.menu-list');
         const navActions = document.querySelectorAll('.nav-action');
