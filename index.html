@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าเว็บตัวอย่าง</title>
+    <title>1440X300 Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -11,210 +11,99 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar-root"></div>
+    <header class="topbar">
+        <nav class="topbar-inner" aria-label="เมนูหลัก">
+            <a class="brand nav-action" href="#home" data-title="หน้าหลัก" data-message="กลับสู่หน้าหลักแล้ว" aria-label="โลโก้เว็บไซต์">
+                <span class="brand-glyph">0</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="เปิดเมนู">
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+            <ul class="menu-list" id="main-menu">
+                <li><a class="nav-action active" href="#home" data-title="หน้าหลัก" data-message="เปิดหน้าหลักแล้ว"><ion-icon name="home" aria-hidden="true"></ion-icon><span>หน้าหลัก</span></a></li>
+                <li><a class="nav-action" href="#shop" data-title="ร้านค้า" data-message="เปิดหน้าร้านค้าแล้ว"><ion-icon name="storefront" aria-hidden="true"></ion-icon><span>ร้านค้า</span></a></li>
+                <li><a class="nav-action" href="#random" data-title="สุ่มรางวัล" data-message="เปิดระบบสุ่มรางวัลแล้ว"><ion-icon name="gift" aria-hidden="true"></ion-icon><span>สุ่มรางวัล</span></a></li>
+                <li><a class="nav-action" href="#services" data-title="บริการ" data-message="แสดงบริการแนะนำแล้ว"><ion-icon name="bag-handle" aria-hidden="true"></ion-icon><span>บริการ</span></a></li>
+                <li><a class="nav-action" href="#premium" data-title="พรีเมี่ยม" data-message="เปิดหมวดพรีเมี่ยมแล้ว"><ion-icon name="albums" aria-hidden="true"></ion-icon><span>พรีเมี่ยม</span></a></li>
+                <li><a class="nav-action" href="#howto" data-title="วิธีใช้" data-message="เปิดวิธีใช้งานแล้ว"><ion-icon name="help-circle" aria-hidden="true"></ion-icon><span>วิธีใช้</span></a></li>
+                <li><a class="nav-action" href="#contact" data-title="ติดต่อ" data-message="เปิดช่องทางติดต่อแล้ว"><ion-icon name="call" aria-hidden="true"></ion-icon><span>ติดต่อ</span></a></li>
+            </ul>
+
+            <a class="admin-link nav-action" href="#admin" data-title="ADMIN" data-message="เข้าสู่พื้นที่ผู้ดูแล"><ion-icon name="person" aria-hidden="true"></ion-icon><span>ADMIN</span></a>
+        </nav>
+    </header>
 
     <main class="page-shell" id="home">
-        <section class="hero-slider" aria-label="แบนเนอร์โปรโมชั่น">
-            <button class="slider-arrow nav-action" type="button" data-title="แบนเนอร์ก่อนหน้า" data-message="เลื่อนไปยังโปรโมชั่นก่อนหน้าแล้ว" aria-label="ก่อนหน้า"><ion-icon name="chevron-back-outline" aria-hidden="true"></ion-icon></button>
-            <div class="hero-copy">
-                <strong>1440 x 300</strong>
-            </div>
-            <button class="slider-arrow nav-action" type="button" data-title="แบนเนอร์ถัดไป" data-message="เลื่อนไปยังโปรโมชั่นถัดไปแล้ว" aria-label="ถัดไป"><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></button>
+        <section class="hero-banner" aria-label="แบนเนอร์โปรโมชั่น">
+            <div class="anime-lines" aria-hidden="true"></div>
+            <h1>1440X300</h1>
         </section>
 
-        <section class="stats-grid" aria-label="สถิติเกมและร้านค้า">
+        <section class="stats-grid" aria-label="ข้อมูลเว็บไซต์">
             <article class="stat-card">
                 <ion-icon class="stat-icon" name="person-circle-outline" aria-hidden="true"></ion-icon>
-                <div>
-                    <h2>สมาชิก<br>ทั้งหมด</h2>
-                    <p>58 คน</p>
-                </div>
+                <div class="stat-copy"><h2>สมาชิกทั้งหมด</h2><p>1 คน</p></div>
             </article>
             <article class="stat-card">
                 <ion-icon class="stat-icon" name="list" aria-hidden="true"></ion-icon>
-                <div>
-                    <h2>หมวด<br>หมู่</h2>
-                    <p>4 หมวด</p>
-                </div>
+                <div class="stat-copy"><h2>หมวดหมู่</h2><p>4 หมวด</p></div>
             </article>
             <article class="stat-card">
-                <ion-icon class="stat-icon" name="bag-handle" aria-hidden="true"></ion-icon>
-                <div>
-                    <h2>พร้อม<br>จำหน่าย</h2>
-                    <p>2 ชิ้น</p>
-                </div>
+                <ion-icon class="stat-icon" name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                <div class="stat-copy"><h2>พร้อมจำหน่าย</h2><p>0 ชิ้น</p></div>
             </article>
             <article class="stat-card">
                 <ion-icon class="stat-icon" name="cube-outline" aria-hidden="true"></ion-icon>
-                <div>
-                    <h2>จำหน่าย<br>ไปแล้ว</h2>
-                    <p>3 ครั้ง</p>
-                </div>
+                <div class="stat-copy"><h2>จำหน่ายไปแล้ว</h2><p>0 ครั้ง</p></div>
             </article>
         </section>
 
         <section class="announcement" aria-label="ประกาศ">
-            <span class="announce-label"><ion-icon name="megaphone" aria-hidden="true"></ion-icon> ประกาศ</span>
-            <p>เว็บขายถูกเริ่มต้น 50/เดือน รองรับทุกปุ่มด้วย SweetAlert2</p>
+            <span>ประกาศ</span>
+            <marquee behavior="scroll" direction="left">Economy</marquee>
+        </section>
+
+        <section class="content-section" id="services">
+            <div class="section-heading">
+                <div>
+                    <h2>บริการแนะนำ</h2>
+                    <p>Services Recommended</p>
+                </div>
+                <a class="pill-link nav-action" href="#all-services" data-title="บริการทั้งหมด" data-message="กำลังแสดงบริการทั้งหมด">เลือกดูทั้งหมด</a>
+            </div>
+            <div class="card-grid">
+                <article class="promo-card"><span>1440X300</span></article>
+                <article class="promo-card"><span>1440X300</span></article>
+            </div>
+        </section>
+
+        <section class="content-section" id="categories">
+            <div class="section-heading">
+                <div>
+                    <h2>หมวดหมู่แนะนำ</h2>
+                    <p>Recommended Categories</p>
+                </div>
+                <a class="pill-link nav-action" href="#all-categories" data-title="หมวดหมู่" data-message="เปิดหมวดหมู่ทั้งหมด">เลือกดูทั้งหมด</a>
+            </div>
+            <div class="category-row">
+                <button class="category-card nav-action" data-title="สินค้าใหม่" data-message="เลือกหมวดสินค้าใหม่แล้ว">สินค้าใหม่</button>
+                <button class="category-card nav-action" data-title="ยอดนิยม" data-message="เลือกหมวดยอดนิยมแล้ว">ยอดนิยม</button>
+                <button class="category-card nav-action" data-title="ราคาประหยัด" data-message="เลือกหมวดราคาประหยัดแล้ว">ราคาประหยัด</button>
+            </div>
         </section>
     </main>
 
-    <div class="auth-modal" id="auth-modal" hidden>
-        <div class="auth-backdrop" data-close-auth></div>
-        <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
-            <button class="auth-close" type="button" data-close-auth aria-label="ปิดหน้าต่าง"><ion-icon name="close" aria-hidden="true"></ion-icon></button>
-            <div class="auth-badge"><ion-icon name="shield-checkmark" aria-hidden="true"></ion-icon></div>
-            <h2 id="auth-title">เข้าสู่ระบบ</h2>
-            <p id="auth-subtitle">กรอกข้อมูลเพื่อเข้าใช้งานระบบอย่างปลอดภัย</p>
-            <form class="auth-form" id="auth-form">
-                <label>
-                    <span>ชื่อผู้ใช้</span>
-                    <div class="input-wrap">
-                        <ion-icon name="person" aria-hidden="true"></ion-icon>
-                        <input id="username" name="username" type="text" autocomplete="username" placeholder="เช่น demo" required minlength="3">
-                    </div>
-                </label>
-                <label>
-                    <span>รหัสผ่าน</span>
-                    <div class="input-wrap">
-                        <ion-icon name="lock-closed" aria-hidden="true"></ion-icon>
-                        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="อย่างน้อย 6 ตัวอักษร" required minlength="6">
-                    </div>
-                </label>
-                <button class="auth-submit" type="submit"><ion-icon name="log-in" aria-hidden="true"></ion-icon><span>เข้าสู่ระบบ</span></button>
-            </form>
-            <button class="auth-switch" type="button" id="auth-switch">ยังไม่มีบัญชี? สมัครสมาชิก</button>
-        </section>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
     <script>
-        const navItems = [
-            { href: '#home', title: 'หน้าหลัก', message: 'เปิดหน้าหลักแล้ว', icon: 'home', label: 'หน้าหลัก', active: true },
-            { href: '#shop', title: 'ร้านค้า', message: 'กำลังพาไปเลือกสินค้าราคาพิเศษ', icon: 'storefront', label: 'ร้านค้า' },
-            { href: '#random', title: 'สุ่มรางวัล', message: 'เตรียมระบบสุ่มรางวัลให้คุณแล้ว', icon: 'gift', label: 'สุ่มรางวัล' },
-            { href: '#services', title: 'บริการ', message: 'แสดงบริการทั้งหมดที่พร้อมใช้งาน', icon: 'game-controller', label: 'บริการ' },
-            { href: '#premium', title: 'แอพพรีเมี่ยม', message: 'เปิดโซนแอพพรีเมี่ยมแล้ว', icon: 'headset', label: 'แอพพรีเมี่ยม' },
-            { href: '#topup', title: 'เติมเงิน', message: 'เข้าสู่หน้าระบบเติมเงินปลอดภัย', icon: 'wallet', label: 'เติมเงิน' },
-            { href: '#howto', title: 'วิธีใช้', message: 'เปิดคู่มือการใช้งานแบบรวดเร็ว', icon: 'help-circle', label: 'วิธีใช้' },
-            { href: '#contact', title: 'ติดต่อ', message: 'ทีมงานพร้อมช่วยเหลือคุณ', icon: 'call', label: 'ติดต่อ' }
-        ];
-
-        const Icon = ({ name }) => React.createElement('ion-icon', { name, 'aria-hidden': 'true' });
-
-        const Navbar = () => React.createElement(
-            'header',
-            { className: 'navbar' },
-            React.createElement(
-                'nav',
-                { className: 'nav-container', 'aria-label': 'เมนูหลัก' },
-                React.createElement(
-                    'a',
-                    { className: 'brand nav-action', href: '#home', 'data-title': 'หน้าแรก', 'data-message': 'กลับไปยังหน้าแรกเรียบร้อยแล้ว', 'aria-label': 'โลโก้เว็บไซต์' },
-                    React.createElement('span', { className: 'brand-mark' }, 'X')
-                ),
-                React.createElement(
-                    'button',
-                    { className: 'menu-toggle', type: 'button', 'aria-expanded': 'false', 'aria-controls': 'main-menu', 'aria-label': 'เปิดเมนู' },
-                    React.createElement(Icon, { name: 'menu-outline' })
-                ),
-                React.createElement(
-                    'ul',
-                    { className: 'menu-list', id: 'main-menu' },
-                    navItems.map((item) => React.createElement(
-                        'li',
-                        { key: item.href },
-                        React.createElement(
-                            'a',
-                            {
-                                className: `nav-action${item.active ? ' active' : ''}`,
-                                href: item.href,
-                                'data-title': item.title,
-                                'data-message': item.message
-                            },
-                            React.createElement(Icon, { name: item.icon }),
-                            React.createElement('span', null, item.label)
-                        )
-                    )),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { className: 'login-link', href: '#login' },
-                            React.createElement(Icon, { name: 'log-in' }),
-                            React.createElement('span', null, 'เข้าสู่ระบบ')
-                        )
-                    )
-                ),
-                React.createElement(
-                    'a',
-                    { className: 'signup-btn register-link', href: '#register' },
-                    React.createElement(Icon, { name: 'person-add' }),
-                    React.createElement('span', null, 'สมัครสมาชิก')
-                )
-            )
-        );
-
-        ReactDOM.render(React.createElement(Navbar), document.querySelector('#navbar-root'));
-
         const menuToggle = document.querySelector('.menu-toggle');
         const menuList = document.querySelector('.menu-list');
-        const navActions = document.querySelectorAll('.nav-action');
-        const authModal = document.querySelector('#auth-modal');
-        const authForm = document.querySelector('#auth-form');
-        const authTitle = document.querySelector('#auth-title');
-        const authSubtitle = document.querySelector('#auth-subtitle');
-        const authSwitch = document.querySelector('#auth-switch');
-        const authSubmitText = document.querySelector('.auth-submit span');
-        let authMode = 'login';
-
-        const notify = (title, message, icon = 'success') => {
-            if (window.Swal) {
-                Swal.fire({
-                    title,
-                    text: message,
-                    icon,
-                    confirmButtonText: 'ตกลง',
-                    confirmButtonColor: '#20bfe8',
-                    background: '#ffffff',
-                    color: '#1d2230'
-                });
-            } else {
-                alert(`${title}: ${message}`);
-            }
-        };
-
         const closeMenu = () => {
             menuToggle.setAttribute('aria-expanded', 'false');
             menuList.classList.remove('is-open');
-        };
-
-        const setAuthMode = (mode) => {
-            authMode = mode;
-            const isRegister = mode === 'register';
-            authTitle.textContent = isRegister ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ';
-            authSubtitle.textContent = isRegister ? 'สร้างบัญชีใหม่เพื่อเริ่มใช้งานได้ทันที' : 'กรอกข้อมูลเพื่อเข้าใช้งานระบบอย่างปลอดภัย';
-            authSubmitText.textContent = isRegister ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ';
-            authSwitch.textContent = isRegister ? 'มีบัญชีแล้ว? เข้าสู่ระบบ' : 'ยังไม่มีบัญชี? สมัครสมาชิก';
-        };
-
-        const openAuth = (mode = 'login') => {
-            setAuthMode(mode);
-            authModal.hidden = false;
-            document.body.classList.add('modal-open');
-            closeMenu();
-            document.querySelector('#username').focus();
-        };
-
-        const closeAuth = () => {
-            authModal.hidden = true;
-            document.body.classList.remove('modal-open');
-            authForm.reset();
         };
 
         menuToggle.addEventListener('click', () => {
@@ -223,52 +112,23 @@
             menuList.classList.toggle('is-open', !isOpen);
         });
 
-        document.querySelector('.login-link').addEventListener('click', (event) => {
-            event.preventDefault();
-            openAuth('login');
-        });
-
-        document.querySelector('.register-link').addEventListener('click', (event) => {
-            event.preventDefault();
-            openAuth('register');
-        });
-
-        document.querySelectorAll('[data-close-auth]').forEach((button) => button.addEventListener('click', closeAuth));
-
-        authSwitch.addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
-
-        authForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const formData = new FormData(authForm);
-            const username = String(formData.get('username')).trim();
-            const password = String(formData.get('password'));
-
-            if (username.length < 3 || password.length < 6) {
-                notify('ข้อมูลไม่ครบ', 'ชื่อผู้ใช้ต้องมีอย่างน้อย 3 ตัว และรหัสผ่านอย่างน้อย 6 ตัว', 'warning');
-                return;
-            }
-
-            closeAuth();
-            notify(authMode === 'register' ? 'สมัครสมาชิกสำเร็จ' : 'เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${username}`);
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !authModal.hidden) {
-                closeAuth();
-            }
-        });
-
-        navActions.forEach((action) => {
+        document.querySelectorAll('.nav-action').forEach((action) => {
             action.addEventListener('click', (event) => {
                 event.preventDefault();
-
                 document.querySelectorAll('.menu-list a').forEach((link) => link.classList.remove('active'));
-                if (action.matches('.menu-list a')) {
-                    action.classList.add('active');
-                }
-
+                if (action.matches('.menu-list a')) action.classList.add('active');
                 closeMenu();
-                notify(action.dataset.title || 'สำเร็จ', action.dataset.message || 'ปุ่มนี้เชื่อมต่อ SweetAlert2 แล้ว');
+                if (window.Swal) {
+                    Swal.fire({
+                        title: action.dataset.title || 'สำเร็จ',
+                        text: action.dataset.message || 'ดำเนินการเรียบร้อย',
+                        icon: 'success',
+                        confirmButtonText: 'ตกลง',
+                        confirmButtonColor: '#d61ab8',
+                        background: '#fff',
+                        color: '#111'
+                    });
+                }
             });
         });
     </script>
