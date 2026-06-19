@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +30,7 @@
                 <li><a class="nav-action" href="#contact" data-title="ติดต่อ" data-message="เปิดช่องทางติดต่อแล้ว"><ion-icon name="call" aria-hidden="true"></ion-icon><span>ติดต่อ</span></a></li>
             </ul>
 
-            <a class="admin-link nav-action" href="#admin" data-title="ADMIN" data-message="เข้าสู่พื้นที่ผู้ดูแล"><ion-icon name="person" aria-hidden="true"></ion-icon><span>ADMIN</span></a>
+            <button class="login-link" type="button" aria-controls="login-panel" aria-expanded="false"><ion-icon name="person" aria-hidden="true"></ion-icon><span>LOGIN</span></button>
         </nav>
     </header>
 
@@ -95,7 +94,24 @@
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <section class="login-panel" id="login-panel" aria-hidden="true" aria-label="ระบบเข้าสู่ระบบ">
+        <div class="login-card">
+            <button class="login-close" type="button" aria-label="ปิดหน้าต่างเข้าสู่ระบบ">×</button>
+            <h2>เข้าสู่ระบบ</h2>
+            <p>กรอกข้อมูลเพื่อเข้าใช้งานสมาชิก</p>
+            <form class="login-form">
+                <label for="username">ชื่อผู้ใช้</label>
+                <input id="username" name="username" type="text" autocomplete="username" placeholder="Username" required>
+
+                <label for="password">รหัสผ่าน</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+
+                <button class="login-submit" type="submit">เข้าสู่ระบบ</button>
+                <small class="login-status" aria-live="polite"></small>
+            </form>
+        </div>
+    </section>
+
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
     <script>
@@ -113,23 +129,41 @@
         });
 
         document.querySelectorAll('.nav-action').forEach((action) => {
-            action.addEventListener('click', (event) => {
-                event.preventDefault();
+            action.addEventListener('click', () => {
                 document.querySelectorAll('.menu-list a').forEach((link) => link.classList.remove('active'));
                 if (action.matches('.menu-list a')) action.classList.add('active');
                 closeMenu();
-                if (window.Swal) {
-                    Swal.fire({
-                        title: action.dataset.title || 'สำเร็จ',
-                        text: action.dataset.message || 'ดำเนินการเรียบร้อย',
-                        icon: 'success',
-                        confirmButtonText: 'ตกลง',
-                        confirmButtonColor: '#d61ab8',
-                        background: '#fff',
-                        color: '#111'
-                    });
-                }
             });
+        });
+
+        const loginButton = document.querySelector('.login-link');
+        const loginPanel = document.querySelector('#login-panel');
+        const loginClose = document.querySelector('.login-close');
+        const loginForm = document.querySelector('.login-form');
+        const loginStatus = document.querySelector('.login-status');
+
+        const setLoginPanel = (isOpen) => {
+            loginPanel.classList.toggle('is-open', isOpen);
+            loginPanel.setAttribute('aria-hidden', String(!isOpen));
+            loginButton.setAttribute('aria-expanded', String(isOpen));
+            if (isOpen) loginPanel.querySelector('#username').focus();
+        };
+
+        loginButton.addEventListener('click', () => {
+            const isOpen = loginButton.getAttribute('aria-expanded') === 'true';
+            setLoginPanel(!isOpen);
+            closeMenu();
+        });
+
+        loginClose.addEventListener('click', () => setLoginPanel(false));
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(loginForm);
+            const username = formData.get('username').toString().trim();
+            loginStatus.textContent = username ? `เข้าสู่ระบบสำเร็จ: ${username}` : 'กรุณากรอกชื่อผู้ใช้';
+            loginStatus.classList.toggle('is-success', Boolean(username));
+            if (username) loginButton.querySelector('span').textContent = username;
         });
     </script>
 </body>
